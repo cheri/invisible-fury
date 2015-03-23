@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <title>Diagnosis Stories</title>
+
+  <style type="text/css">
+    body {
+      font: 10pt arial;
+    }
+    #mynetwork {
+      width: 100%;
+      height: 800px;
+      /*border: 1px solid lightgray;*/
+      background-color:#000;
+    }
+  </style>
+
+  <script type="text/javascript" src="js/vis.js"></script>
+  <script type="text/javascript" src="js/graph-nodes.js"></script>
+  <link href="css/vis.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="draw([
+    {id: 1,  label: 'Andrea', shape: 'circularImage', image: DIR + 'andrea.png'},
+    {id: 2,  label: 'Brittany', shape: 'circularImage', image: DIR + 'brittany.jpg'},
+    {id: 3,  label: 'Gloria', shape: 'circularImage', image: DIR + 'gloria.jpg'}
+  ])">
+<div id="mynetwork"></div>
+
+<div id="info"></div>
+</body>
+</html>
