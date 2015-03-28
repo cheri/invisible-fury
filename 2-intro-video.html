@@ -40,6 +40,8 @@
         </div>  
 	
 	<script>
+    $("#intro-video").hide();
+    $("#button-bar").hide();
     // BUTTON BAR - PLAY, REW, FF VIDEO
     function vidplay() {
        var video = document.getElementById("intro-video");
@@ -73,9 +75,7 @@
       });
     });
     // SMOKE 
-	function startSmoke(){		
-        $("#intro-video").hide();
-        $("#button-bar").hide();
+	function startSmoke(){		        
 		$('#smoke').fadeIn(1000);
 	}
 	// Create an array to store our particles
