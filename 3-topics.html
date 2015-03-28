@@ -53,8 +53,16 @@
     <div id="extra-links" style="text-align:center;">
         <br><a href="about.html" class="btn" style="color:#fff;">About the Project</a>
     </div>
-
+    <div id="loading-gif">LOADING...</div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js">
+    </script>
+    <script src="js/imagesloaded.pkgd.min.js">
+    </script>
     <script>
+    $(document).ready(function(){    
+        $(".container").hide();
+        $("#extra-links").hide();
+    });
     function showCaption(caption_id){        
         document.getElementById(caption_id).style.visibility = 'visible';
         document.getElementById(caption_id).style.opacity = '1';
@@ -63,5 +71,11 @@
         document.getElementById(caption_id).style.visibility = 'hidden';
         document.getElementById(caption_id).style.opacity = '0';   
     }
+    imagesLoaded( document.querySelector('.container'), function( instance ) {
+        console.log('All topic images have loaded.');
+        $(".container").fadeIn(1000);
+        $("#extra-links").fadeIn(1000);
+        $("#loading-gif").hide();
+    });
     </script>
 </body>
