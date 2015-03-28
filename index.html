@@ -46,6 +46,12 @@ html,body{ margin:0; padding:0;}
   </div>  
 
  <script>
+ $(".gray").hide();
+ var moved=false;
+ $(document).ready(function(){    
+        // $(".model").fadeIn(1000);
+        
+    });
  $('.model').click(function(e){
   
   var offs = $(this).offset(),
@@ -56,15 +62,19 @@ html,body{ margin:0; padding:0;}
   $('.gray', this).css({left:x, top:y, backgroundPosition: -x+'px '+-y+'px'});
     
 });
- $('.model').mousemove(function(e){
-  
+ $('.model').mousemove(function(e){    
+  if (!moved){
+      $(".gray").fadeIn(1000);
+      moved=true;
+    }
   var offs = $(this).offset(),
       p    = {x:offs.left, y:offs.top},
       mPos = {x:e.pageX, y:e.pageY},
       x    = mPos.x - p.x - 200,
       y    = mPos.y - p.y - 200;
   $('.gray', this).css({left:x, top:y, backgroundPosition: -x+'px '+-y+'px'});
-    
+   
+
 });
  </script>
 </body>
