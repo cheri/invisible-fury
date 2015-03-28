@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+    <div id="loading-gif"><img src="img/loading_spinner.gif"><!-- <br>Loading archives... --></div>
     <div class="container" style="text-align:center;">
         <!-- Main Grid -->
         <div class="row">
@@ -52,8 +53,7 @@
     </div>
     <div id="extra-links" style="text-align:center;">
         <br><a href="about.html" class="btn" style="color:#fff;">About the Project</a>
-    </div>
-    <div id="loading-gif">LOADING...</div>
+    </div>    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js">
     </script>
     <script src="js/imagesloaded.pkgd.min.js">
@@ -73,9 +73,9 @@
     }
     imagesLoaded( document.querySelector('.container'), function( instance ) {
         console.log('All topic images have loaded.');
-        $(".container").fadeIn(1000);
-        $("#extra-links").fadeIn(1000);
-        $("#loading-gif").hide();
+        
+        $("#loading-gif").fadeOut(2000, function(){$(".container").fadeIn(1000);
+        $("#extra-links").fadeIn(1000);});
     });
     </script>
 </body>
