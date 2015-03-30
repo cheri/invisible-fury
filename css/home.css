@@ -39,7 +39,8 @@ p{
 	padding: 30px 20px;
 }
 #title{
-	/*font-family: Georgia, serif;*/
+	/*font-family: Georgia, serif;*/	
+	text-align: center;
 	color: white;	
 	font-size: 40px;
 	font-weight: bold;
@@ -48,6 +49,10 @@ p{
         -ms-transition:  0.5s linear;
         -o-transition:   0.5s linear;
         transition:      0.5s linear;
+}
+#title a{
+	text-decoration: none;
+	color:#fff;
 }
 
 .header{

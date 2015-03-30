@@ -22,10 +22,12 @@
 </head>
 <body onload="startSmoke();">	
 	
-	<canvas id="smoke" onclick="$('#smoke').fadeOut(2000);$('#intro-video').show();$('#button-bar').show();$('#intro-video').get(0).play();" width="100%" height="100%"  style="position:absolute;left:0;top:0;bottom:0;right:0;z-index:10;"></canvas>
+	<canvas id="smoke" onclick="$('#smoke').fadeOut(2000);$('#intro-video').show();$('#button-bar').show();$('#title').show();$('.header').show();$('#intro-video').get(0).play();" width="100%" height="100%"  style="position:absolute;left:0;top:0;bottom:0;right:0;z-index:10;"></canvas>
     <div style="position:relative;z-index:5;">  
             <!-- <iframe id="intro-video" src="http://player.vimeo.com/video/116956053?autoplay=0&title=0&byline=0&portrait=0" width="897" height="505" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  -->      
-            <div id="button-bar" style="text-align:center;padding-top:20px;">     
+            <p id="title" class="header" style="padding-top:30px;"><a href="index.html">The Invisible Fury</a></p>
+    <p class="header" style="text-align:center;">&middot; Jana Bolotin &middot; Sarah Harmon &middot; Marissa Kitazawa &middot;</p>
+            <div id="button-bar" style="text-align:center;">     
                 <br><a href="3-topics.html" class="btn" style="color:#fff;">Skip Intro</a>
                 <!-- <br><br>       
                 <button id="rew" onclick="skip(-10)">&lt;&lt;</button>
@@ -42,6 +44,8 @@
 	<script>
     $("#intro-video").hide();
     $("#button-bar").hide();
+    $("#title").hide();
+    $(".header").hide();
     // BUTTON BAR - PLAY, REW, FF VIDEO
     function vidplay() {
        var video = document.getElementById("intro-video");
