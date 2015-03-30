@@ -20526,8 +20526,9 @@ return /******/ (function(modules) { // webpackBootstrap
         width = this.imageObj.width;
         height = this.imageObj.height;
       }
-      this.width  = width;
-      this.height = height;
+      // SPECIFY CUSTOM IMAGE WIDTH AND HEIGHT
+      this.width  = 70; //width;
+      this.height = 70; //height;
 
       this.growthIndicator = 0;
       if (this.width > 0 && this.height > 0) {
