@@ -60,14 +60,20 @@ a{
 
 .btn{
 	border-style: solid;
-	border-width: 1px;
-	border-color: #000;
+	border-width: 3px;
+	border-color: #500;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px; /* future proofing */
+	-khtml-border-radius:4px;
 	padding:10px 20px;
 	margin:10px 20px;
 	color:#000;
 	text-transform: uppercase;	
 	font-family: 'Arial Narrow', sans-serif;
-	font-size: 20px;	
+	font-size: 25px;	
+	text-shadow: 1px 1px 1px #000;	
+	background-color:#100;
 
 	-webkit-transition:  0.5s linear;
         -moz-transition: 0.5s linear;
