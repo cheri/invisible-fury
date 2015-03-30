@@ -20145,7 +20145,8 @@ return /******/ (function(modules) { // webpackBootstrap
     if (properties.value !== undefined)          {this.value = properties.value;}
     if (properties.level !== undefined)          {this.level = properties.level; this.preassignedLevel = true;}
     if (properties.posts !== undefined)          {this.posts = properties.posts}
-      if (properties.bio !== undefined)          {this.bio = properties.bio}
+    if (properties.bio !== undefined)            {this.bio = properties.bio}
+    if (properties.name !== undefined)           {this.name = properties.name}
     if (properties.big_image_roto !== undefined) {this.big_image_roto = properties.big_image_roto}
     if (properties.big_image !== undefined)      {this.big_image = properties.big_image}
     if (properties.video !== undefined)          {this.video = properties.video}
@@ -32828,7 +32829,7 @@ return /******/ (function(modules) { // webpackBootstrap
     
     // Show bio page based on node ID on click
     if (node != null){      
-      document.getElementById("info-title").innerHTML = node.label + "'s Story";      
+      document.getElementById("info-title").innerHTML = node.name + "'s Story";      
 
       document.getElementById("info-header").innerHTML = "";
       // document.getElementById("info-header").innerHTML = "<p>" + ;
