@@ -84,9 +84,13 @@ p{
         -o-transition:   0.5s linear;
         transition:      0.5s linear;
 }
+
 /*.btn:hover{
 	color:#0df;
 	font-size: 30px;
 	opacity:0.4;	
 	border-color: #0df;
 }*/
+div.clear {
+    clear:both;
+}

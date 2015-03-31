@@ -32825,13 +32825,14 @@ return /******/ (function(modules) { // webpackBootstrap
    * @private
    */
   exports._handleTap = function(pointer) {
+    $("#action-arrow").show();    
     var node = this._getNodeAt(pointer);
     
     // Show bio page based on node ID on click
     if (node != null){      
-      document.getElementById("info-title").innerHTML = node.name + "'s Story";      
+      // document.getElementById("info-title").innerHTML = node.name + "'s Story";      
 
-      document.getElementById("info-header").innerHTML = "";
+      // document.getElementById("info-header").innerHTML = "";
       // document.getElementById("info-header").innerHTML = "<p>" + ;
       // document.getElementById("info-header").innerHTML = "<img src='" + node.big_image_roto + "' height='200'>";      
       // if (node.big_image){
@@ -32850,9 +32851,20 @@ return /******/ (function(modules) { // webpackBootstrap
       }
 
       // Reset video
-      document.getElementById("video-container").innerHTML = '';   
+      document.getElementById("post-video").innerHTML = '';   
+      $("#post-video").hide();
+      $('#button-bar').hide();
       if (node.video){
-        document.getElementById("video-container").innerHTML = '<iframe src="'+node.video+'?autoplay=1&title=0&byline=0&portrait=0" width="595" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';   
+        $('#button-bar').show();
+        $("#post-video").show();
+
+        // document.getElementById("post-video").innerHTML = '<source src="vid/' + node.video+ '" type="video/mp4" controls preload autoplay> Video not supported.'
+        var video = document.getElementById("post-video");
+        video.pause();
+        video.setAttribute("src", "vid/" + node.video);
+        video.play();
+        var button = document.getElementById("play");
+        button.textContent = "PAUSE";
       }
       
 

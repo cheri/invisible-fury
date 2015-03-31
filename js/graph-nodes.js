@@ -17,7 +17,7 @@ function draw(nodes, edges) {
       borderWidth:4,
     color: {
         // border: 'darkred',
-        border: '#777',
+        border: '#0af', // 777
         background: '#000'
       },
       // fontColor:'red'

@@ -1,67 +1,52 @@
 <!doctype html>
 <html>
 <head>
-  <title>Notions of Femininity</title>
+  <title>Notions of Femininity</title>  
+  <link href="css/home.css" rel="stylesheet" type="text/css" />
   <style type="text/css">
     body {
-      margin:0;      
-      background: #aaa;
+      /*margin:0 !important;*/
+      /*padding:0 !important;      */
+      /*background: #001;*/
       color:#777;
       /*font-size: 26px;*/
       font-family: Georgia, serif;
       /*text-shadow: 1px 1px 3px #000;*/
     }
     #mynetwork {
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px; /* future proofing */
+      -khtml-border-radius: 10x; /* for old Konqueror browsers */
+      border:1px solid #035;
       margin:0;
       float:left;
-      width: 40%;
-      height: 500px;
-
-      float:left;
-      /*border: 1px solid lightgray;*/
-      background-color:#000;
-      /*border:1px solid #ccc;  */
+      width: 90%;
+      margin-left: 5%;
+      height: 400px;
+      text-align: center;
+      float:left;    
+      background-color:#000;      
     }
-    #info {
-      background:#ddd;      
-      width:60%;  
-      height:500px;
-      margin-left: 40%;  
-      padding-left: 20px;             
-      padding-top:1px;
-    }    
     #page-title{
-      color:#222;
+      /*padding:20px 20px 20px 0px;*/
+      padding:20px 10px 20px 0px;
+      padding:20px 5%;
+      color:#cce;
     }
     #parallax-posts{
       padding:20px;
-      color:#000;
+      color:#aaa;
+      overflow-x: hidden; 
+      overflow-y: scroll;
     }
     .btn{
-      
-      /*background:#08a;*/
-      background: #00d8ff; /* Old browsers */
-background: -moz-linear-gradient(top, #00d8ff 1%, #0080a0 51%, #005772 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#00d8ff), color-stop(51%,#0080a0), color-stop(100%,#005772)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #00d8ff 1%,#0080a0 51%,#005772 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #00d8ff 1%,#0080a0 51%,#005772 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #00d8ff 1%,#0080a0 51%,#005772 100%); /* IE10+ */
-background: linear-gradient(to bottom, #00d8ff 1%,#0080a0 51%,#005772 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d8ff', endColorstr='#005772',GradientType=0 ); /* IE6-9 */
-
-      border-style: solid;
-      border-width: 1px;
-      /*border-color: #0df;*/
-      border-color: #666;
-      padding:5px 10px;
-
-      /*color:#ddd;*/
-      color:#dfdfdf;
-      text-transform: uppercase;  
+      background:#000;
+      padding:8px 10px;
+      color:#ccc;
       text-decoration: none;
-      font-family: 'Arial Narrow', sans-serif;
       font-size: 16px;
-      text-shadow: 1px 1px 1px #069;  
+      border:1px solid #068;
 
       -webkit-transition:  0.5s linear;
       -moz-transition: 0.5s linear;
@@ -71,53 +56,118 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d8ff', end
     }
     .btn:hover{
       color:#eee;
+      border:1px solid #0df;
+      cursor:pointer;
     }
-
+    video 
+        {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            border: 1px solid #0df;
+        }
+    #action-arrow{
+      text-align:center;
+      font-size:30px;
+      color:#cce;
+      text-shadow:0px 0px 40px #0df
+    }
   </style>
 
   <script type="text/javascript" src="js/vis.js"></script>
   <script type="text/javascript" src="js/graph-nodes.js"></script>
   <link href="css/vis.css" rel="stylesheet" type="text/css" />
+  <!-- <link href="css/main.css" rel="stylesheet" type="text/css" /> -->
+  
+  
 </head>
+
 <body onload="draw([
-    {id: 1,  label: 'The Battle Rhetoric', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'http://player.vimeo.com/video/123473709', big_image_roto: DIR + 'andrea.png', big_image: DIR + 'andrea.png', bio: 'Andrea&rsquo;s Bio', posts: '<p>Andrea Post1</p>$$Andrea Post2'},
+    {id: 1,  label: 'The Battle Rhetoric', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'The_Battle_Rhetoric-HD.mp4', big_image_roto: DIR + 'andrea.png', big_image: DIR + 'andrea.png', bio: 'Andrea&rsquo;s Bio', posts: '<p>Andrea Post1</p>$$Andrea Post2'},
     
   ], [
     
   ])">
-<div id="wrap">
+
+
+    <p id="title" class="header" style="padding-top:20px;"><a href="index.html">The Invisible Fury</a></p>
+    <p class="header" style="text-align:center;">&middot; Jana Bolotin &middot; Sarah Harmon &middot; Marissa Kitazawa &middot;</p>  
+
   <div id="page-title">
-    <h2 style="margin-left:30px;">
-      Notions of Femininity
-      <a href="3-topics.html" class="btn" style="margin-left:13px;">Back to Topic List</a>
-    </h2>
+    <span style="font-size:33px;text-shadow:0px 0px 40px #0df">
+      Notions of Femininity      
+    </span>
+    <a href="3-topics.html" class="btn" style="float:right;display:inline-block;vertical-align:middle;margin-top:-5px"> Back to Topic List &#9656;</a>
   </div>
-  <!-- Left Sidebar with Draggable Graph Nodes -->
-  <div id="mynetwork"></div>
 
-  <!-- Right Sidebar with Information on Click -->
-  <div id="info">
-    
-      <!-- Right Sidebar Title -->
-      <h2 id="info-title"></h2>   
-
-      <!-- Right Sidebar Header (includes image) -->
-      <div id="info-header"><i>Click a character to hear their story.</i></div>
-
-      <!-- Right Sidebar Video -->
+  <div id="topic-content">
+    <!-- Left Sidebar with Draggable Graph Nodes -->
+    <div id="mynetwork"></div>
+              
+    <div class="clear"></div> <br>
+    <!-- Call to Action Arrow -->
+    <!-- <p style="text-align:center;">Click on a character, and scroll down to read their story.</p><br> -->
+    <div id="action-arrow">&#9660;</div>
+   
+    <div id="parallax-posts">
+      <!-- Parallax Posts (underneath sidebars)-->
       <div id="video-container">          
-            <div class="video-holder">&nbsp;
-                <!-- <iframe src="http://player.vimeo.com/video/116956053?autoplay=1&title=0&byline=0&portrait=0" width="897" height="505" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
-            </div>
+        <div id="button-bar" style="text-align:center;">                    
+                <button id="rew" class="btn" onclick="skip(-10)">&lt;&lt;</button>
+                <button id="play" class="btn" onclick="vidplay()">PLAY VIDEO</button>
+                <button id="fastFwd" class="btn" onclick="skip(10)">&gt;&gt;</button>
+            </div><br>
+        <video id="post-video">          
+          <!-- <source src="vid/Brittanys_Choice_cut.mp4" type="video/mp4"; codecs="avc1.42E01E, mp4a.40.2" controls autoplay autostart="true" class="video-js vjs-default-skin" >          
+          Video not supported -->
+        </video>
       </div> 
+      <p id="info-posts">
+        
+      </p> 
+    </div>
+
+    <!-- TEST PARALLAX -->
+    <section id="slide-1" class="homeSlide">
+        <div class="bcg">
+            <div class="hsContainer">
+                <div class="hsContent">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
   </div>
-  <div id="parallax-posts">
-    <!-- Parallax Posts (underneath sidebars)-->
-    <p id="info-posts">
-      
-    </p> 
-  </div>
-</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/skrollr.js"></script>
+<script>
+  $("#topic-content").hide();
+  $('#button-bar').hide();
+  $("#action-arrow").hide();
+  $("#post-video").hide();
+  $(document).ready(function(){ 
+    $("#topic-content").fadeIn(1000);
+    });
+
+  function vidplay() {
+       var video = document.getElementById("post-video");
+       var button = document.getElementById("play");
+       if (video.paused) {
+          video.play();
+          button.textContent = "PAUSE";
+       } else {
+          video.pause();
+          button.textContent = "PLAY VIDEO";
+       }
+    }
+
+    function skip(value) {
+        var video = document.getElementById("post-video");
+        video.currentTime += value;
+    } 
+
+</script>
 </body>
 </html>
 
