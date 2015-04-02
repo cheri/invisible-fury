@@ -32829,7 +32829,27 @@ return /******/ (function(modules) { // webpackBootstrap
     var node = this._getNodeAt(pointer);
     
     // Show bio page based on node ID on click
-    if (node != null){      
+    if (node != null){  
+      // document.getElementById("parallax-posts").innerHTML = "";
+      $("#loading-gif").show();
+
+      if (node.name=="Andrea"){  
+      
+      
+      }
+      
+      if (node.name=="Brittany"){
+        // console.log("adding?");
+        // document.getElementById("parallax-posts").innerHTML += '<div id="brittany-post-1" class="parallax-window" data-parallax="scroll" data-image-src="img/parallax-images/brittany-and-puppy.jpg" data-z-index="10"></div><div id="brittany-post-2" class="parallax-window" data-parallax="scroll" data-image-src="img/parallax-images/brittany-maynard-and-bridesmaids.jpg" data-z-index="10"><p><i>"It&rsquo;s not my job to tell her how to live, and it&rsquo;s not my job to tell her how to die.  It&rsquo;s my job to love her through it."</i><br> - Debbie Ziegler, Brittany&rsquo;s mother</p></div><div id="brittany-post-3" class="parallax-window" data-parallax="scroll" data-image-src="img/parallax-images/brittany-and-husband-wedding.jpg" data-z-index="10"></div>';
+        // document.getElementById("parallax-posts").innerHTML += '<div id="post-1" style="background-image=url(\"img\/parallax-images\/brittany-and-puppy.jpg\")"></div>';
+        // document.getElementById("parallax-posts").innerHTML += '<div id="post-2" background-image=url("img\/parallax-images\/brittany-maynard-and-bridesmaids.jpg")></div>';
+        // $('#post-1').stellar();
+        // $('#post-2').stellar();
+        // $('#par-img-1').stellar();
+        // $('#par-img-2').stellar();
+        // $(window).stellar();
+      }
+      
       // document.getElementById("info-title").innerHTML = node.name + "'s Story";      
 
       // document.getElementById("info-header").innerHTML = "";
@@ -32839,57 +32859,39 @@ return /******/ (function(modules) { // webpackBootstrap
       //   document.getElementById("info-header").innerHTML += "<img src='" + node.big_image + "' height='200'>";      
       // }
 
-      document.getElementById("info-posts").innerHTML = ""; // Reset info-posts
+      // document.getElementById("info-posts").innerHTML = ""; // Reset info-posts
 
-      document.getElementById("info-posts").innerHTML += "<p>" + node.bio + "</p><hr>";
+      // document.getElementById("info-posts").innerHTML += "<p>" + node.bio + "</p><hr>";
 
-      var posts = node.posts.split("$$");      
-      if (node.posts){
-        for (var i in posts){        
-          document.getElementById("info-posts").innerHTML += "<p>" + posts[i] + "</p><hr>";        
-        }
-      }
+      // var posts = node.posts.split("$$");      
+      // if (node.posts){
+      //   for (var i in posts){    
+      //     var num = parseInt(i)+1;    
+      //     document.getElementById("info-posts").innerHTML += 
+      //     "<section id='slide-" + (num) +"' class='homeSlide'><div class='bcg' data-center='background-position: 50% 0px;' data-top-bottom='background-position: 50% -100px;' data-anchor-target='#slide-" + (num) + "'><div class='hsContainer'><div class='hsContent' data-center='opacity: 1' data-106-top='opacity: 0' data-anchor-target='#slide-"+ (num) +" h2'><h2>" + posts[i] + "</h2><hr></div></div></div></section>";
+      //   }
+      // }
 
       // Reset video
       document.getElementById("post-video").innerHTML = '';   
       $("#post-video").hide();
+      $("#video-container").hide();
       $('#button-bar').hide();
       if (node.video){
         $('#button-bar').show();
+        $("#video-container").show();
         $("#post-video").show();
 
-        // document.getElementById("post-video").innerHTML = '<source src="vid/' + node.video+ '" type="video/mp4" controls preload autoplay> Video not supported.'
+        
         var video = document.getElementById("post-video");
         video.pause();
         video.setAttribute("src", "vid/" + node.video);
+        // video.setAttribute("loop", true);
+        video.setAttribute("controls", true);
         video.play();
-        var button = document.getElementById("play");
-        button.textContent = "PAUSE";
+        // var button = document.getElementById("play");
+        // button.textContent = "PAUSE";
       }
-      
-
-      // <div id="video-container">
-      //       <div>
-      //           <!-- <a href="#" id="back-to-grid-btn" class="menu-btn" onclick="showGrid()" style="float:right;">Back</a> -->
-      //       </div>            
-            
-      //       <div class="video-holder">&nbsp;
-      //           <iframe src="http://player.vimeo.com/video/116956053?autoplay=1&title=0&byline=0&portrait=0" width="897" height="505" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-      //       </div>
-
-      //       <div id="video-menu-bar">
-      //           <a href="#" id="back-to-grid-btn" class="btn" onclick="showGrid()" style="float:left;">Back</a>
-      //           <div style="float:right; padding:10px 20px">
-      //               <img class="face" src="img/video-faces/andrea_steiner-sq.jpg">
-      //               <img class="face" src="img/video-faces/brittanymaynard-sq.jpg">
-      //               <img class="face" src="img/video-faces/CSMLHBJ-sq.jpg">
-      //               <img class="face" src="img/video-faces/first-sq.png">
-      //               <img class="face" src="img/video-faces/gloria-1-sq.jpg">     
-      //               <img class="face" src="img/video-faces/IMG_8525-sq.JPG">     
-      //               <img class="face" src="img/video-faces/kgport-sq.jpg">     
-      //           </div>
-      //       </div>
-      //   </div>
     }    
 
     if (node != null) {
