@@ -84,7 +84,28 @@ p{
         -o-transition:   0.5s linear;
         transition:      0.5s linear;
 }
+.skip-btn{
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: #777;
+	padding:10px 20px;
+	color:#777;
+	text-transform: uppercase;	
+	font-family: 'Arial Narrow', sans-serif;
+	font-size: 20px;
+	text-shadow: 1px 1px 3px #000;	
 
+	-webkit-transition:  0.5s linear;
+        -moz-transition: 0.5s linear;
+        -ms-transition:  0.5s linear;
+        -o-transition:   0.5s linear;
+        transition:      0.5s linear;
+}
+.skip-btn:hover{
+	color:#aaa;
+	border-color: #0df;
+}
 /*.btn:hover{
 	color:#0df;
 	font-size: 30px;
