@@ -19,20 +19,28 @@
             /*background: url('img/maggini-collage.png') no-repeat;
             background-size: cover;   */       
         }
+        /*#skip-intro{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top:550px;
+            left:0px;            
+            margin-left:10px;            
+        }*/
     </style>
 </head>
 <body onload="startSmoke();">	
 	
 	<canvas id="smoke" onclick="fadeAwaySmoke();" width="100%" height="100%"  style="position:absolute;left:0;top:0;bottom:0;right:0;z-index:10;"></canvas>
     <div style="position:relative;z-index:5;">  
-                    
-                <!-- <br><a href="3-topics.html" class="skip-btn">Skip Intro</a><br> -->
-           
             <video id="intro-video">
                 <source src="vid/Invisible_Fury_Intro-HD.webm" type='video/webm; codecs="vp8, vorbis"' autostart="false"/>
                 <source src="vid/Invisible_Fury_Intro-HD.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' autostart="false">                
                 Video not supported.
             </video>
+            <div id="skip-intro">
+                <!-- <a href="3-topics.html"  class="skip-btn">Skip Intro</a> -->
+            </div>
         </div>  
 	
     <!--[if lt IE 9]>
@@ -44,8 +52,8 @@
 	<script>
     $("#intro-video").hide();
     $("#button-bar").hide();
-    $("#title").hide();
-    $(".header").hide();
+    $("#title").hide();    
+    $("#skip-intro").hide();
     $(document).ready(function(){         
         setTimeout(function() { fadeAwaySmoke(); }, 4000);
 
@@ -88,7 +96,7 @@
         $('#intro-video').show();
         $('#button-bar').show();
         $('#title').show();
-        $('.header').show();
+        $("#skip-intro").show();
         $('#intro-video').get(0).play();
         var video = document.getElementById("intro-video");
         video.setAttribute("controls", true);
