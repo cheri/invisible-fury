@@ -85,9 +85,7 @@
 
   <script type="text/javascript" src="js/vis.js"></script>
   <script type="text/javascript" src="js/graph-nodes.js"></script>
-  <link href="css/vis.css" rel="stylesheet" type="text/css" />
-  <!-- <link href="css/main.css" rel="stylesheet" type="text/css" /> -->
-  
+  <link href="css/vis.css" rel="stylesheet" type="text/css" />  
   
 </head>
 <body onload="draw([
@@ -113,73 +111,33 @@
     <div id="mynetwork"></div>
               
     <div class="clear"></div> <br>
+    <!-- Instructions -->
+    <div id="graph-controls" style="text-align:center;">
+      <p style="font-size:20px">Click on a character, and scroll down to hear their story.</p>
+      <p><i>Swipe with two fingers to zoom.  Click and drag to move nodes of the character graph around.  </i></p>
+    </div>
+    <br>
     <!-- Call to Action Arrow -->
-    <!-- <p style="text-align:center;">Click on a character, and scroll down to read their story.</p><br> -->
-    <div id="action-arrow">&#9660;</div><br>
+    <div id="action-arrow">&#9660;</div>
     <div id="video-container" style="display:block;min-height:580px;z-index:15;">          
-      <!-- <div id="button-bar" style="text-align:center;">                    
-              <button id="rew" class="btn" onclick="skip(-10)">&lt;&lt;</button>
-              <button id="play" class="btn" onclick="vidplay()">PLAY VIDEO</button>
-              <button id="fastFwd" class="btn" onclick="skip(10)">&gt;&gt;</button>
-          </div><br> -->
       <video id="post-video" style="z-index:15;"></video>
-    </div>
-    
-   
-   
-    <div class="clear"></div> <br>
-    <!-- Parallax Posts (underneath sidebars)-->
-    <div id="parallax-container" style="position:relative">
-      <!-- <img id="loading-gif" style="text-align:center; position: absolute;z-index: 1;height:500px;top:0;left:16%;" src="img/loading_spinner.gif"> -->
-      
-      <div id="parallax-posts">  
-
-        <!-- <div id="andrea-posts">         -->
-         <!--  <div class="parallax-window" data-parallax="scroll" data-image-src="img/bcg_slide-1.jpg" data-z-index="10"><p><i>Dr. Steiner is a health policy analyst at UCSC.</i></p></div>          
-          <div class="parallax-window" data-parallax="scroll" data-image-src="img/bcg_slide-2.jpg" data-z-index="10"></div>
-          <div class="parallax-window" data-parallax="scroll" data-image-src="img/bcg_slide-3.jpg" data-z-index="10"></div> -->
-        <!-- </div>      -->
-
-       <!--  <div id="brittany-posts">  
-          <div id="brittany-post-1" class="parallax-window" data-parallax="scroll" data-image-src="img/parallax-images/brittany-and-puppy.jpg" data-z-index="10"></div> 
-          <div id="brittany-post-2" class="parallax-window" data-parallax="scroll" data-image-src="img/parallax-images/brittany-maynard-and-bridesmaids.jpg" data-z-index="10"><p><i>"It's not my job to tell her how to live, and it's not my job to tell her how to die.  It's my job to love her through it."</i><br> - Debbie Ziegler, Brittany's mother</p></div> 
-          <div id="brittany-post-3" class="parallax-window" data-parallax="scroll" data-image-src="img/parallax-images/brittany-and-husband-wedding.jpg" data-z-index="10"></div>           
-          
-          
-        </div>  -->
-
-      <!--   <div id="brittany-posts">  
-          <img id="brittany-post-1" src="img/parallax-images/brittany-and-puppy.jpg" data-z-index="10"></div> 
-          <img id="brittany-post-2" src="img/parallax-images/brittany-maynard-and-bridesmaids.jpg" data-z-index="10"><p><i>"It's not my job to tell her how to live, and it's not my job to tell her how to die.  It's my job to love her through it."</i><br> - Debbie Ziegler, Brittany's mother</p></div> 
-          <div id="brittany-post-3" background-image="img/parallax-images/brittany-and-husband-wedding.jpg" data-z-index="10"><  
-        </div>  -->
-      </div>
-    </div>
-
+    </div>    
+  </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="js/parallax.min.js"></script>
-<!-- <script src="js/jquery.stellar.min.js"></script> -->
+
 <script>
   $('#andrea-posts').css('outline','1px solid transparent');
   $("#topic-content").hide();
   $('#button-bar').hide();
   $("#action-arrow").hide();
   $("#post-video").hide();  
-  // $("#parallax-posts").show();  
   $("#loading-gif").hide();    
   $("#video-container").hide();  
 
   $(document).ready(function(){ 
-      $("#topic-content").fadeIn(1000);        
-      // $('#parallax-posts').stellar();      
-      // $('#brittany-posts').stellar();    
+      $("#topic-content").fadeIn(1000);              
     });
 
-  // $.stellar({
-  //   horizontalScrolling: false,
-  //   verticalScrolling:true,
-  //   responsive: true
-  // });
   function vidplay() {
        var video = document.getElementById("post-video");
        var button = document.getElementById("play");

@@ -76,9 +76,7 @@
 
   <script type="text/javascript" src="js/vis.js"></script>
   <script type="text/javascript" src="js/graph-nodes.js"></script>
-  <link href="css/vis.css" rel="stylesheet" type="text/css" />
-  <!-- <link href="css/main.css" rel="stylesheet" type="text/css" /> -->
-  
+  <link href="css/vis.css" rel="stylesheet" type="text/css" />  
   
 </head>
 <body onload="draw([
@@ -106,27 +104,17 @@
     <div id="mynetwork"></div>
               
     <div class="clear"></div> <br>
-    <!-- Call to Action Arrow -->
-    <!-- <p style="text-align:center;">Click on a character, and scroll down to read their story.</p><br> -->
-    <div id="action-arrow">&#9660;</div>
-   
-    <div id="parallax-posts">
-      <!-- Parallax Posts (underneath sidebars)-->
-      <div id="video-container">          
-    <!--     <div id="button-bar" style="text-align:center;">              
-          <button id="rew" class="btn" onclick="skip(-10)">&lt;&lt;</button>
-          <button id="play" class="btn" onclick="vidplay()">PLAY VIDEO</button>
-          <button id="fastFwd" class="btn" onclick="skip(10)">&gt;&gt;</button>
-        </div><br> -->
-        <video id="post-video">          
-          <!-- <source src="vid/Brittanys_Choice_cut.mp4" type="video/mp4"; codecs="avc1.42E01E, mp4a.40.2" controls autoplay autostart="true" class="video-js vjs-default-skin" >          
-          Video not supported -->
-        </video>
-      </div> 
-      <p id="info-posts">
-        
-      </p> 
+    <!-- Instructions -->
+    <div id="graph-controls" style="text-align:center;">
+      <p style="font-size:20px">Click on a character, and scroll down to hear their story.</p>
+      <p><i>Swipe with two fingers to zoom.  Click and drag to move nodes of the character graph around.</i></p>
     </div>
+    <br>
+    <!-- Call to Action Arrow -->
+    <div id="action-arrow">&#9660;</div><br>
+    <div id="video-container" style="display:block;min-height:580px;z-index:15;">          
+      <video id="post-video" style="z-index:15;"></video>
+    </div>    
   </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
