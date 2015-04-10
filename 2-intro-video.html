@@ -12,10 +12,12 @@
         }
         video 
         {
-
-            width: 100%;            
-            height: auto;
-            max-height: 90%;            
+            display: block;
+            position: fixed; right: 0; bottom: 0;
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto; z-index: -100;
+            /*background: url('img/maggini-collage.png') no-repeat;
+            background-size: cover;   */       
         }
     </style>
 </head>
@@ -23,24 +25,22 @@
 	
 	<canvas id="smoke" onclick="fadeAwaySmoke();" width="100%" height="100%"  style="position:absolute;left:0;top:0;bottom:0;right:0;z-index:10;"></canvas>
     <div style="position:relative;z-index:5;">  
-            <!-- <iframe id="intro-video" src="http://player.vimeo.com/video/116956053?autoplay=0&title=0&byline=0&portrait=0" width="897" height="505" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  -->      
-            <p id="title" class="header" style="padding-top:30px;"><!-- <a href="index.html">The Invisible Fury</a></p>
-    <p class="header" style="text-align:center;">&middot; Jana Bolotin &middot;</p> -->
-            <div id="button-bar" style="text-align:center;">     
-                <br><a href="3-topics.html" class="skip-btn">Skip Intro</a><br>
-
-                <!-- <br><br>       
-                <button id="rew" onclick="skip(-10)">&lt;&lt;</button>
-                <button id="play" onclick="vidplay()">&#124;&#124;</button>
-                <button id="fastFwd" onclick="skip(10)">&gt;&gt;</button> -->
-            </div>
-            <video id="intro-video" style="margin-bottom:20px;">
-                <source src="vid/Invisible_Fury_Intro-HD.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' autostart="false">                    
+                    
+                <!-- <br><a href="3-topics.html" class="skip-btn">Skip Intro</a><br> -->
+           
+            <video id="intro-video">
                 <source src="vid/Invisible_Fury_Intro-HD.webm" type='video/webm; codecs="vp8, vorbis"' autostart="false"/>
+                <source src="vid/Invisible_Fury_Intro-HD.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' autostart="false">                
                 Video not supported.
             </video>
         </div>  
 	
+    <!--[if lt IE 9]>
+    <script>
+    document.createElement('video');
+    </script>
+    <![endif]-->
+
 	<script>
     $("#intro-video").hide();
     $("#button-bar").hide();
