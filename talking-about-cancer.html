@@ -81,6 +81,13 @@
       line-height: 150%;
       font-size: 25px;
     }
+    #transition-video{
+      width:100%;height:100%;padding:0;margin:0;
+      /*opacity:0.6;*/
+    }
+    #transition-video-container{
+      z-index:10;padding:0;margin:0;position:absolute;left:0;top:0;bottom:0;right:0;z-index:10;background:black;
+    }
   </style>
 
   <script type="text/javascript" src="js/vis.js"></script>
@@ -88,40 +95,43 @@
   <link href="css/vis.css" rel="stylesheet" type="text/css" />  
   
 </head>
-<body onload="draw([
-    {id: 1,  label: 'The Battle Rhetoric', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'The_Battle_Rhetoric-HD.mp4', big_image_roto: DIR + 'andrea-sq.jpg', big_image: DIR + 'andrea.png', bio: 'Andrea&rsquo;s Bio', posts: 'Andrea Post1: Here are some words.  Here are some more.  Here are even more.$$Andrea Post2: Here are some words.  Here are some more.  Here are even more.'},    
-    {id: 2,  label: 'Defining the Invisible Fury', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_Defining_Invisible_Fury-HD.mp4', bio: 'Yolanda&rsquo;s Bio', posts: 'Post1'},
-    {id: 3,  label: 'Beyond Body', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_Battle_Metaphor-HD.mp4', bio: 'Yolanda&rsquo;s Bio', posts: 'Post1'},
-    {id: 4,  label: 'WomenCARE', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_WomenCARE-HD.mp4', big_image_roto: DIR + 'yolanda.jpg', big_image: DIR + 'yolanda.jpg', bio: 'Yolanda&rsquo;s Bio', posts: '<p>Yolanda Post1</p>$$Yolanda Post2'}
-  ], [    
-    {from: 1, to: 3},
-  ])">
-
-
-    <p id="title" class="header" style="padding-top:20px;"><a href="index.html">The Invisible Fury</a></p>
-  <div id="page-title">
-    <span style="font-size:33px;text-shadow:0px 0px 40px #0df">
-      Talking About Cancer      
-    </span>
-    <a href="3-topics.html" class="btn" style="float:right;display:inline-block;vertical-align:middle;margin-top:-5px"> Back to Topic List &#9656;</a>
+<body>
+  <div id="transition-video-container">
+    <video id="transition-video">
+      <source src="vid/intro-cuts/talking-about-cancer.webm" type='video/webm; codecs="vp8, vorbis"'/>
+      <source src="vid/intro-cuts/talking-about-cancer.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+      
+                                
+                Video not supported.
+    </video>
   </div>
 
-  <div id="topic-content">
-    <!-- Left Sidebar with Draggable Graph Nodes -->
-    <div id="mynetwork"></div>
-              
-    <div class="clear"></div> <br>
-    <!-- Instructions -->
-    <div id="graph-controls" style="text-align:center;">
-      <p style="font-size:20px">Click on a character, and scroll down to hear their story.</p>
-      <p><i>Swipe with two fingers to zoom.  Click and drag to move nodes of the character graph around.  </i></p>
-    </div>
-    <br>
-    <!-- Call to Action Arrow -->
-    <div id="action-arrow">&#9660;</div>
-    <div id="video-container" style="display:block;min-height:580px;z-index:15;">          
-      <video id="post-video" style="z-index:15;"></video>
-    </div>    
+  <div style="position:relative;z-index:5">
+        <p id="title" class="header" style="padding-top:20px;"><a href="index.html">The Invisible Fury</a></p>
+      <div id="page-title">
+        <span style="font-size:33px;text-shadow:0px 0px 40px #0df">
+          Talking About Cancer      
+        </span>
+        <a href="3-topics.html" class="btn" style="float:right;display:inline-block;vertical-align:middle;margin-top:-5px"> Back to Topic List &#9656;</a>
+      </div>
+
+      <div id="topic-content">
+        <!-- Left Sidebar with Draggable Graph Nodes -->
+        <div id="mynetwork"></div>
+                  
+        <div class="clear"></div> <br>
+        <!-- Instructions -->
+        <div id="graph-controls" style="text-align:center;">
+          <p style="font-size:20px">Click on a character, and scroll down to hear their story.</p>
+          <p><i>Swipe with two fingers to zoom.  Click and drag to move nodes of the character graph around.  </i></p>
+        </div>
+        <br>
+        <!-- Call to Action Arrow -->
+        <div id="action-arrow">&#9660;</div>
+        <div id="video-container" style="display:block;min-height:580px;z-index:15;">          
+          <video id="post-video" style="z-index:15;"></video>
+        </div>    
+      </div>
   </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -133,10 +143,37 @@
   $("#post-video").hide();  
   $("#loading-gif").hide();    
   $("#video-container").hide();  
+  $("#transition-video").hide();   
 
-  $(document).ready(function(){ 
-      $("#topic-content").fadeIn(1000);              
+  $(document).ready(function(){     
+    $("#transition-video").fadeIn(1000);   
+    $('#transition-video').get(0).play();      
+
     });
+
+  var video = document.getElementById("transition-video");    
+
+    video.onended = function(e) {
+      doneVideo();
+    }
+
+    video.onclick = function(e){
+      doneVideo();
+    }
+
+    function doneVideo(){
+      $("#transition-video-container").fadeOut(500);   
+      $("#topic-content").fadeIn(1000);   
+      draw([
+    {id: 1,  label: 'The Battle Rhetoric', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'The_Battle_Rhetoric-HD.mp4', big_image_roto: DIR + 'andrea-sq.jpg', big_image: DIR + 'andrea.png', bio: 'Andrea&rsquo;s Bio', posts: 'Andrea Post1: Here are some words.  Here are some more.  Here are even more.$$Andrea Post2: Here are some words.  Here are some more.  Here are even more.'},    
+    {id: 2,  label: 'Defining the Invisible Fury', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_Defining_Invisible_Fury-HD.mp4', bio: 'Yolanda&rsquo;s Bio', posts: 'Post1'},
+    {id: 3,  label: 'Beyond Body', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_Battle_Metaphor-HD.mp4', bio: 'Yolanda&rsquo;s Bio', posts: 'Post1'},
+    {id: 4,  label: 'WomenCARE', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_WomenCARE-HD.mp4', big_image_roto: DIR + 'yolanda.jpg', big_image: DIR + 'yolanda.jpg', bio: 'Yolanda&rsquo;s Bio', posts: '<p>Yolanda Post1</p>$$Yolanda Post2'}
+      ], [    
+        {from: 1, to: 3},
+      ]);
+    }
+
 
   function vidplay() {
        var video = document.getElementById("post-video");

@@ -59,18 +59,24 @@
       border:1px solid #0df;
       cursor:pointer;
     }
-    video 
-        {
-            width: 100%;
-            height: auto;
-            max-height: 100%;
-            border: 1px solid #0df;
-        }
+    video {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        border: 1px solid #0df;
+    }
     #action-arrow{
       text-align:center;
       font-size:30px;
       color:#cce;
       text-shadow:0px 0px 40px #0df
+    }
+    #transition-video{
+      width:100%;height:100%;padding:0;margin:0;
+      /*opacity:0.6;*/
+    }
+    #transition-video-container{
+      z-index:10;padding:0;margin:0;position:absolute;left:0;top:0;bottom:0;right:0;z-index:10;background:black;
     }
   </style>
 
@@ -80,54 +86,83 @@
   
 </head>
 
-<body onload="draw([
-    {id: 1,  label: 'Rita Commentary', name:'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'Commentary_About_Rita-HD.mp4', big_image_roto: DIR + 'andrea.jpg', big_image: DIR + 'andrea.jpg', bio: 'Andrea&rsquo;s Bio', posts: '<p>Andrea Post1</p>$$Andrea Post2'},
-    {id: 2,  label: 'Rita&rsquo;s Story', name: 'Rita', shape: 'circularImage', image: DIR + 'rita-sq.png', video: 'Commentary_About_Rita-HD.mp4', big_image_roto: DIR + 'rita-1.png', big_image: DIR + 'rita-1.png', bio: 'Rita&rsquo;s Bio', posts: '<p>Rita Post1</p>$$Rita Post2'},
-    {id: 3,  label: 'Yolanda&rsquo;s Story', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_Diagnosis_Story-HD.mp4', big_image_roto: DIR + 'yolanda.jpg', big_image: DIR + 'yolanda.jpg', bio: 'Yolanda&rsquo;s Bio', posts: '<p>Yolanda Post1</p>$$Yolanda Post2'},
-    {id: 4,  label: 'Santa Cruz Resources', name: 'Yolanda', shape: 
-    'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_Santa_Cruz_Resources-HD.mp4', big_image_roto: DIR + 'yolanda.jpg', big_image: DIR + 'yolanda.jpg', bio: 'Yolanda&rsquo;s Bio', posts: '<p>Yolanda Post1</p>$$Yolanda Post2'},
-    {id: 5,  label: 'WomenCARE', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_WomenCARE-HD.mp4', big_image_roto: DIR + 'yolanda.jpg', big_image: DIR + 'yolanda.jpg', bio: 'Yolanda&rsquo;s Bio', posts: '<p>Yolanda Post1</p>$$Yolanda Post2'}
-    
-  ], [
-    {from: 1, to: 2},
-    {from: 1, to: 3}  
-  ])">
+<body>
 
-
-    <p id="title" class="header" style="padding-top:20px;"><a href="index.html">The Invisible Fury</a></p>    
-  <div id="page-title">
-    <span style="font-size:33px;text-shadow:0px 0px 40px #0df">
-      Diagnosis Stories      
-    </span>
-    <a href="3-topics.html" class="btn" style="float:right;display:inline-block;vertical-align:middle;margin-top:-5px"> Back to Topic List &#9656;</a>
+  <div id="transition-video-container">
+    <video id="transition-video">
+      <source src="vid/intro-cuts/diagnosis-stories.webm" type='video/webm; codecs="vp8, vorbis"'/>
+      <source src="vid/intro-cuts/diagnosis-stories.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+      Video not supported.
+    </video>
   </div>
 
-  <div id="topic-content">
-    <!-- Left Sidebar with Draggable Graph Nodes -->
-    <div id="mynetwork"></div>
-              
-    <div class="clear"></div> <br>
-    <!-- Instructions -->
-    <div id="graph-controls" style="text-align:center;">
-      <p style="font-size:20px">Click on a character, and scroll down to hear their story.</p>
-      <p><i>Swipe with two fingers to zoom.  Click and drag to move nodes of the character graph around.  </i></p>
+  <div style="position:relative;z-index:5">
+    <p id="title" class="header" style="padding-top:20px;"><a href="index.html">The Invisible Fury</a></p>    
+    <div id="page-title">
+      <span style="font-size:33px;text-shadow:0px 0px 40px #0df">
+        Diagnosis Stories      
+      </span>
+      <a href="3-topics.html" class="btn" style="float:right;display:inline-block;vertical-align:middle;margin-top:-5px"> Back to Topic List &#9656;</a>
     </div>
-    <br>
-    <!-- Call to Action Arrow -->
-    <div id="action-arrow">&#9660;</div><br>
-    <div id="video-container" style="display:block;min-height:580px;z-index:15;">          
-      <video id="post-video" style="z-index:15;"></video>
-    </div>    
+
+    <div id="topic-content">
+      <!-- Left Sidebar with Draggable Graph Nodes -->
+      <div id="mynetwork"></div>
+                
+      <div class="clear"></div> <br>
+      <!-- Instructions -->
+      <div id="graph-controls" style="text-align:center;">
+        <p style="font-size:20px">Click on a character, and scroll down to hear their story.</p>
+        <p><i>Swipe with two fingers to zoom.  Click and drag to move nodes of the character graph around.  </i></p>
+      </div>
+      <br>
+      <!-- Call to Action Arrow -->
+      <div id="action-arrow">&#9660;</div><br>
+      <div id="video-container" style="display:block;min-height:580px;z-index:15;">          
+        <video id="post-video" style="z-index:15;"></video>
+      </div>    
+    </div>
   </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
   $("#topic-content").hide();
   $('#button-bar').hide();
   $("#action-arrow").hide();
-  $("#post-video").hide();
-  $(document).ready(function(){ 
-    $("#topic-content").fadeIn(1000);
+  $("#post-video").hide();  
+  $("#transition-video").hide();  
+  
+  $(document).ready(function(){     
+    $("#transition-video").fadeIn(1000);   
+    $('#transition-video').get(0).play();      
+
     });
+
+  var video = document.getElementById("transition-video");
+
+    video.onended = function(e) {
+      doneVideo();
+    }
+
+    video.onclick = function(e){
+      doneVideo();
+    }
+
+    function doneVideo(){
+      $("#transition-video-container").fadeOut(500);   
+      $("#topic-content").fadeIn(1000);   
+      draw([
+      {id: 1,  label: 'Rita Commentary', name:'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'Commentary_About_Rita-HD.mp4', big_image_roto: DIR + 'andrea.jpg', big_image: DIR + 'andrea.jpg', bio: 'Andrea&rsquo;s Bio', posts: '<p>Andrea Post1</p>$$Andrea Post2'},
+      {id: 2,  label: "Rita's Story", name: 'Rita', shape: 'circularImage', image: DIR + 'rita-sq.png', video: 'Commentary_About_Rita-HD.mp4', big_image_roto: DIR + 'rita-1.png', big_image: DIR + 'rita-1.png', bio: 'Rita&rsquo;s Bio', posts: '<p>Rita Post1</p>$$Rita Post2'},
+      {id: 3,  label: "Yolanda's Story", name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_Diagnosis_Story-HD.mp4', big_image_roto: DIR + 'yolanda.jpg', big_image: DIR + 'yolanda.jpg', bio: 'Yolanda&rsquo;s Bio', posts: '<p>Yolanda Post1</p>$$Yolanda Post2'},
+      {id: 4,  label: 'Santa Cruz Resources', name: 'Yolanda', shape: 
+      'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_Santa_Cruz_Resources-HD.mp4', big_image_roto: DIR + 'yolanda.jpg', big_image: DIR + 'yolanda.jpg', bio: 'Yolanda&rsquo;s Bio', posts: '<p>Yolanda Post1</p>$$Yolanda Post2'},
+      {id: 5,  label: 'WomenCARE', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_WomenCARE-HD.mp4', big_image_roto: DIR + 'yolanda.jpg', big_image: DIR + 'yolanda.jpg', bio: 'Yolanda&rsquo;s Bio', posts: '<p>Yolanda Post1</p>$$Yolanda Post2'}
+      
+      ], [
+        {from: 1, to: 2},
+        {from: 1, to: 3}  
+      ]);
+    }
 
   function vidplay() {
        var video = document.getElementById("post-video");

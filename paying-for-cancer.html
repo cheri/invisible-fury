@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Talking About Cancer</title>  
+  <title>Paying for Cancer</title>  
   <link href="css/home.css" rel="stylesheet" type="text/css" />
   <style type="text/css">
     body {
@@ -72,6 +72,13 @@
       color:#cce;
       text-shadow:0px 0px 40px #0df
     }
+    #transition-video{
+      width:100%;height:100%;padding:0;margin:0;
+      /*opacity:0.6;*/
+    }
+    #transition-video-container{
+      z-index:10;padding:0;margin:0;position:absolute;left:0;top:0;bottom:0;right:0;z-index:10;background:black;
+    }
   </style>
 
   <script type="text/javascript" src="js/vis.js"></script>
@@ -79,53 +86,81 @@
   <link href="css/vis.css" rel="stylesheet" type="text/css" />  
   
 </head>
-<body onload="draw([
-    {id: 1,  label: 'Economics &amp; Education', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'Education_and_Economics-HD.mp4', bio: 'Andrea&rsquo;s Bio', posts: 'Post1'},
-    {id: 2,  label: 'Poverty as Carcinogen', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'Poverty_as_Carcinogen-HD.mp4', bio: 'Andrea&rsquo;s Bio', posts: 'Post1'},
-    {id: 3,  label: 'Prevention &amp; Environment', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'Prevention_and_Environment-HD.mp4', bio: 'Andrea&rsquo;s Bio', posts: 'Post1'},
-    {id: 4,  label: 'Health Care Reform', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'Health_Care_Reform-HD.mp4', bio: 'Andrea&rsquo;s Bio', posts: 'Post1'},
-    {id: 5,  label: 'Navigating Health Insurance', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_Navigating_Health_Insurance-HD.mp4', bio: 'Yolanda&rsquo;s Bio', posts: 'Post1'},
-  ], [
-    {from: 1, to: 2},
-    {from: 3, to: 4},
-  ])">
+<body>
 
-
-    <p id="title" class="header" style="padding-top:20px;"><a href="index.html">The Invisible Fury</a></p>    
-  <div id="page-title">
-    <span style="font-size:33px;text-shadow:0px 0px 40px #0df">
-      Talking About Cancer      
-    </span>
-    <a href="3-topics.html" class="btn" style="float:right;display:inline-block;vertical-align:middle;margin-top:-5px"> Back to Topic List &#9656;</a>
+  <div id="transition-video-container">
+    <video id="transition-video">
+      <source src="vid/intro-cuts/paying-for-cancer.webm" type='video/webm; codecs="vp8, vorbis"'/>
+      <source src="vid/intro-cuts/paying-for-cancer.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+      Video not supported.
+    </video>
   </div>
 
-  <div id="topic-content">
-    <!-- Left Sidebar with Draggable Graph Nodes -->
-    <div id="mynetwork"></div>
-              
-    <div class="clear"></div> <br>
-    <!-- Instructions -->
-    <div id="graph-controls" style="text-align:center;">
-      <p style="font-size:20px">Click on a character, and scroll down to hear their story.</p>
-      <p><i>Swipe with two fingers to zoom.  Click and drag to move nodes of the character graph around.</i></p>
+  <div style="position:relative;z-index:5">
+      <p id="title" class="header" style="padding-top:20px;"><a href="index.html">The Invisible Fury</a></p>    
+    <div id="page-title">
+      <span style="font-size:33px;text-shadow:0px 0px 40px #0df">
+        Paying for Cancer    
+      </span>
+      <a href="3-topics.html" class="btn" style="float:right;display:inline-block;vertical-align:middle;margin-top:-5px"> Back to Topic List &#9656;</a>
     </div>
-    <br>
-    <!-- Call to Action Arrow -->
-    <div id="action-arrow">&#9660;</div><br>
-    <div id="video-container" style="display:block;min-height:580px;z-index:15;">          
-      <video id="post-video" style="z-index:15;"></video>
-    </div>    
-  </div>
 
+    <div id="topic-content">
+      <!-- Left Sidebar with Draggable Graph Nodes -->
+      <div id="mynetwork"></div>
+                
+      <div class="clear"></div> <br>
+      <!-- Instructions -->
+      <div id="graph-controls" style="text-align:center;">
+        <p style="font-size:20px">Click on a character, and scroll down to hear their story.</p>
+        <p><i>Swipe with two fingers to zoom.  Click and drag to move nodes of the character graph around.</i></p>
+      </div>
+      <br>
+      <!-- Call to Action Arrow -->
+      <div id="action-arrow">&#9660;</div><br>
+      <div id="video-container" style="display:block;min-height:580px;z-index:15;">          
+        <video id="post-video" style="z-index:15;"></video>
+      </div>    
+    </div>
+  </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
   $("#topic-content").hide();
   $('#button-bar').hide();
   $("#action-arrow").hide();
   $("#post-video").hide();
-  $(document).ready(function(){ 
-    $("#topic-content").fadeIn(1000);
+  $("#transition-video").hide();  
+  
+  $(document).ready(function(){     
+    $("#transition-video").fadeIn(1000);   
+    $('#transition-video').get(0).play();      
+
     });
+
+  var video = document.getElementById("transition-video");
+
+    video.onended = function(e) {
+      doneVideo();
+    }
+
+    video.onclick = function(e){
+      doneVideo();
+    }
+
+    function doneVideo(){
+      $("#transition-video-container").fadeOut(500);   
+      $("#topic-content").fadeIn(1000);   
+      draw([
+        {id: 1,  label: 'Economics and Education', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'Education_and_Economics-HD.mp4', bio: "Andrea's Bio", posts: 'Post1'},
+        {id: 2,  label: 'Poverty as Carcinogen', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'Poverty_as_Carcinogen-HD.mp4', bio: "Andrea's Bio", posts: 'Post1'},
+        {id: 3,  label: 'Prevention and Environment', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'Prevention_and_Environment-HD.mp4', bio: "Andrea's Bio", posts: 'Post1'},
+        {id: 4,  label: 'Health Care Reform', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'Health_Care_Reform-HD.mp4', bio: "Andrea's Bio", posts: 'Post1'},
+        {id: 5,  label: 'Navigating Health Insurance', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq.png', video: 'Yolanda_Navigating_Health_Insurance-HD.mp4', bio: "Yolanda's Bio", posts: 'Post1'},
+      ], [
+        {from: 1, to: 2},
+        {from: 3, to: 4},
+      ]);
+    }
 
   function vidplay() {
        var video = document.getElementById("post-video");
