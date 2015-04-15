@@ -7,10 +7,12 @@ $(document).ready(function(){
       $("#topic-content").fadeIn(1000);          
       
       draw([
-      {id: 1,  label: 'The Battle Rhetoric', name: 'Andrea', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'The_Battle_Rhetoric-HD.mp4', big_image_roto: DIR + 'andrea-sq.jpg', big_image: DIR + 'andrea.png', bio: 'Andrea&rsquo;s Bio', posts: 'Andrea Post1: Here are some words.  Here are some more.  Here are even more.$$Andrea Post2: Here are some words.  Here are some more.  Here are even more.'},    
-      {id: 2,  label: 'Defining the Invisible Fury', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq-4.jpg', video: 'Yolanda_Defining_Invisible_Fury-HD.mp4', bio: 'Yolanda&rsquo;s Bio', posts: 'Post1'},
-      {id: 3,  label: 'Beyond Body', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq-2.jpg', video: 'Yolanda_Battle_Metaphor-HD.mp4', bio: 'Yolanda&rsquo;s Bio', posts: 'Post1'},
-      {id: 4,  label: 'WomenCARE', name: 'Yolanda', shape: 'circularImage', image: DIR + 'yolanda-sq-3.jpg', video: 'Yolanda_WomenCARE-HD.mp4', big_image_roto: DIR + 'yolanda.jpg', big_image: DIR + 'yolanda.jpg', bio: 'Yolanda&rsquo;s Bio', posts: '<p>Yolanda Post1</p>$$Yolanda Post2'}
+      {id: 1,  label: 'The Battle Rhetoric', name: 'Andrea', type: 'nonroto', shape: 'circularImage', image: DIR + 'andrea-sq.jpg', video: 'The_Battle_Rhetoric-HD.mp4', big_image_roto: DIR + 'andrea-sq.jpg', big_image: DIR + 'andrea.png', bio: 'Andrea&rsquo;s Bio', posts: 'Andrea Post1: Here are some words.  Here are some more.  Here are even more.$$Andrea Post2: Here are some words.  Here are some more.  Here are even more.'},    
+      {id: 2,  label: 'Defining the Invisible Fury', name: 'Yolanda', type: 'nonroto', shape: 'circularImage', image: DIR + 'yolanda-sq-4.jpg', video: 'Yolanda_Defining_Invisible_Fury-HD.mp4', bio: 'Yolanda&rsquo;s Bio', posts: 'Post1'},
+      {id: 3,  label: 'Beyond Body', name: 'Yolanda', type: 'nonroto', shape: 'circularImage', image: DIR + 'yolanda-sq-2.jpg', video: 'Yolanda_Battle_Metaphor-HD.mp4', bio: 'Yolanda&rsquo;s Bio', posts: 'Post1'},
+      {id: 4,  label: 'WomenCARE', name: 'Yolanda', type: 'nonroto', shape: 'circularImage', image: DIR + 'yolanda-sq-3.jpg', video: 'Yolanda_WomenCARE-HD.mp4', big_image_roto: DIR + 'yolanda.jpg', big_image: DIR + 'yolanda.jpg', bio: 'Yolanda&rsquo;s Bio', posts: '<p>Yolanda Post1</p>$$Yolanda Post2'},
+      {id: 5,  label: 'The Cancer Narrative', name: 'Alicia', type: 'roto', shape: 'circularImage', image: DIR + 'alicia-roto-sq.jpg', parallax_link:"alicia-the-cancer-narrative.html", big_image_roto: DIR + 'alicia-roto.jpg', big_image: DIR + 'alicia-roto.jpg', bio: "Alicia's Bio", posts: '<p>Alicia Post1</p>$$Alicia Post2'}
+
         ], [    
           {from: 1, to: 3},
         ]);      

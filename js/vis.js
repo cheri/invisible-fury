@@ -20150,6 +20150,8 @@ return /******/ (function(modules) { // webpackBootstrap
     if (properties.big_image_roto !== undefined) {this.big_image_roto = properties.big_image_roto}
     if (properties.big_image !== undefined)      {this.big_image = properties.big_image}
     if (properties.video !== undefined)          {this.video = properties.video}
+    if (properties.type !== undefined)           {this.type = properties.type}
+    if (properties.parallax_link !== undefined)  {this.parallax_link = properties.parallax_link}
 
     // navigation controls properties
     if (properties.horizontalAlignLeft !== undefined) {this.horizontalAlignLeft = properties.horizontalAlignLeft;}
@@ -32872,26 +32874,35 @@ return /******/ (function(modules) { // webpackBootstrap
       //   }
       // }
 
-      // Reset video
-      document.getElementById("post-video").innerHTML = '';   
-      $("#post-video").hide();
-      $("#video-container").hide();
-      $('#button-bar').hide();
-      if (node.video){
-        $('#button-bar').show();
-        $("#video-container").show();
-        $("#post-video").show();
-
-        
-        var video = document.getElementById("post-video");
-        video.pause();
-        video.setAttribute("src", "vid/" + node.video);
-        // video.setAttribute("loop", true);
-        video.setAttribute("controls", true);
-        video.play();
-        // var button = document.getElementById("play");
-        // button.textContent = "PAUSE";
+      
+      // Go to parallax page if node is of type roto
+      if (node.type=="roto"){
+        window.location.href = node.parallax_link;
       }
+      else{
+        // Reset video
+        document.getElementById("post-video").innerHTML = '';   
+        $("#post-video").hide();
+        $("#video-container").hide();
+        $('#button-bar').hide();
+        if (node.video){
+          $('#button-bar').show();
+          $("#video-container").show();
+          $("#post-video").show();
+
+          
+          var video = document.getElementById("post-video");
+          video.pause();
+          video.setAttribute("src", "vid/" + node.video);
+          // video.setAttribute("loop", true);
+          video.setAttribute("controls", true);
+          video.play();
+          // var button = document.getElementById("play");
+          // button.textContent = "PAUSE";
+        }
+      }
+
+      
     }    
 
     if (node != null) {
