@@ -32827,7 +32827,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * @private
    */
   exports._handleTap = function(pointer) {
-    $("#action-arrow").show();    
+       
     var node = this._getNodeAt(pointer);
     
     // Show bio page based on node ID on click
@@ -32880,6 +32880,9 @@ return /******/ (function(modules) { // webpackBootstrap
         window.location.href = node.parallax_link;
       }
       else{
+        // Show the action arrow
+        $("#action-arrow").show(); 
+
         // Reset video
         document.getElementById("post-video").innerHTML = '';   
         $("#post-video").hide();
