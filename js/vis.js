@@ -15777,7 +15777,7 @@ return /******/ (function(modules) { // webpackBootstrap
       },
       dragNetwork: true,
       dragNodes: true,
-      zoomable: true,
+      zoomable: false, // otherwise, swipe to zoom
       hover: false,
       hideEdgesOnDrag: false,
       hideNodesOnDrag: false,
