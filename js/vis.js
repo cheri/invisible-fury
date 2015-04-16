@@ -32893,7 +32893,7 @@ return /******/ (function(modules) { // webpackBootstrap
           $("#video-container").show();
           $("#post-video").show();
 
-          
+          $("html,body").animate({scrollTop: $("#post-video").position().top+"px"});
           var video = document.getElementById("post-video");
           video.pause();
           video.setAttribute("src", "vid/" + node.video);
