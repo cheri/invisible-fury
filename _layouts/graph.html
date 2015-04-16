@@ -107,27 +107,7 @@
   $("#action-arrow").hide();    
   $("#post-video").hide();     
   $("#video-container").hide();   
-
   {{content}}
-
-  function vidplay() {
-       var video = document.getElementById("post-video");
-       var button = document.getElementById("play");
-       if (video.paused) {
-          video.play();
-          button.textContent = "PAUSE";
-       } else {
-          video.pause();
-          button.textContent = "PLAY VIDEO";
-       }
-    }
-
-    function skip(value) {
-        var video = document.getElementById("post-video");
-        video.currentTime += value;
-    } 
-
-
 </script>
 </body>
 </html>
