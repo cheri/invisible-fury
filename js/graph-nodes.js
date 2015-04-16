@@ -14,18 +14,16 @@ function draw(nodes, edges) {
   };
   var options = {
     nodes: {
-      borderWidth:4,
-    color: {
-        // border: 'darkred',
-        border: '#0af', // 777
+      borderWidth:4,      
+    color: {        
+        border: '#0af', 
         background: '#000'
-      },
-      // fontColor:'red'
+      },      
       fontColor: '#fff'
     },
-    edges: {
-      // color: 'darkred'
-      color: '#777'
+    edges: {      
+      color: '#777',
+      
     }
   };
   network = new vis.Network(container, data, options);
