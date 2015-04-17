@@ -60,7 +60,7 @@ a{
 }
 
 .btn{
-	border-style: dashed;
+	border-style: solid;
 	border-width: 1px;
 	border-color: #000;
 	-moz-border-radius: 4px;
@@ -83,7 +83,7 @@ a{
 }
 
 .btn:hover{
-	border-style: dashed;
+	border-style: solid;
 	border-width: 2px;
-	border-color:#0df;	
+	border-color:#fff;	
 }
