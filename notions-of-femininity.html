@@ -15,11 +15,17 @@ $(document).ready(function(){
 
         {id: 4,  label: "Femininity", name: 'Rita', shape: 'circularImage', image: DIR + 'rita-sq.jpg', video: 'Rita_Femininity-HD.mp4', big_image_roto: DIR + 'rita-1.png', big_image: DIR + 'rita-1.png', bio: 'Rita&rsquo;s Bio', posts: '<p>Rita Post1</p>$$Rita Post2'},
 
-        {id: 5,  label: "Relationship with Body", name: 'Rita', shape: 'circularImage', image: DIR + 'rita-sq-5.jpg', video: 'Rita_Relationship_with_Body-HD.mp4', big_image_roto: DIR + 'rita-1.png', big_image: DIR + 'rita-1.png', bio: 'Rita&rsquo;s Bio', posts: '<p>Rita Post1</p>$$Rita Post2'}
+        {id: 5,  label: "Relationship with Body", name: 'Rita', shape: 'circularImage', image: DIR + 'rita-sq-5.jpg', video: 'Rita_Relationship_with_Body-HD.mp4', big_image_roto: DIR + 'rita-1.png', big_image: DIR + 'rita-1.png', bio: 'Rita&rsquo;s Bio', posts: '<p>Rita Post1</p>$$Rita Post2'},
+
+        {id: 6,  label: "Litmus Test", name: 'Lisa', type: 'roto', shape: 'circularImage', image: DIR + 'lisa-roto-sq.jpg', parallax_link:"stories/lisa-litmus-test.html", big_image_roto: DIR + 'lisa-roto.jpg', big_image: DIR + 'lisa-roto.jpg', bio: "Lisa's Bio", posts: '<p>Lisa Post1</p>$$Lisa Post2'},
         
       ], [
+        {from: 4, to: 2},
         {from: 4, to: 3},
-        {from: 4, to: 2},        
+        {from: 4, to: 6},
+        {from: 2, to: 6},
+        {from: 5, to: 6},
+        {from: 5, to: 2},        
       ]);      
 
     });
