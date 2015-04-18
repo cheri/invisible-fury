@@ -14,20 +14,22 @@
         video 
         {
             display: block;
+            /* right: 5px; // margin for skip-btn */
             position: fixed; right: 0; bottom: 0;
             min-width: 100%; min-height: 100%;
             width: auto; height: auto; z-index: -100;
             /*background: url('img/maggini-collage.png') no-repeat;
             background-size: cover;   */       
         }
-        /*#skip-intro{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top:550px;
-            left:0px;            
-            margin-left:10px;            
-        }*/
+        #skip-intro{
+            position: fixed;
+            /*position: fixed;            */
+            right:10px;
+            bottom:30px;
+            /*font-size: 15px;*/
+            /*top:80%;*/
+            
+        }
     </style>
 </head>
 <body onload="startSmoke();">	
@@ -39,8 +41,9 @@
                 <source src="vid/Invisible_Fury_Intro-HD.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' autostart="false">                
                 Video not supported.
             </video>
+            <br><br>
             <div id="skip-intro">
-                <!-- <a href="3-topics.html"  class="skip-btn">Skip Intro</a> -->
+                <a href="3-topics.html"  class="skip-btn">Skip Intro</a>
             </div>
         </div>  
 	
